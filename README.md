@@ -8,7 +8,7 @@ Work in progress.
 
 ## Windows 환경
 
-[https://github.com/sky-ranch/RP400JB_Helper] 를 사용하세요
+[https://github.com/sky-ranch/RP400JB_Helper](https://github.com/sky-ranch/RP400JB_Helper) 를 사용하세요
 
 
 # 알려진 이슈
@@ -17,4 +17,4 @@ Work in progress.
 Bluetooth 가 활성화 된 상태로 절전 모드 들어갈 경우, epdd 가 얼어버리는 문제가 있음.
 
 ### 해결법 (테스트 중)
-[https://github.com/perillamint/RP4JailbreakKit/blob/master/epdd-patch/epdd-patch.zip] 을 Magisk module 로 설치하세요.
+[epdd-patch.zip](https://github.com/perillamint/RP4JailbreakKit/blob/master/epdd-patch/epdd-patch.zip) 을 Magisk module 로 설치하세요.
