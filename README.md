@@ -1,6 +1,6 @@
 # Ridi paper 4 jailbreak kit 
 
-Work in progress.
+**펌웨어 1.0.9 환경에서 작동하는 스크립트입니다. 해당 버전 이외의 환경에서는 정상 작동을 보증하지 않습니다.**
 
 ## Mac, Linux 환경
 
