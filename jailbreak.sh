@@ -32,7 +32,7 @@ echo "(PgUp + PWR) 로 진입시킨 뒤, USB 케이블로 연결해 주세요."
 fastboot flash boot magisk-cust.img
 fastboot reboot
 
-echo "기기 부팅 중... USB 케이블을 제거해 주세요."
+echo "기기 부팅 중... USB 케이블을 **지금 즉시** 제거해 주세요."
 echo ""
 
 IFS="" read -p "기기 부팅이 완료된 후 기기의 IP 주소를 입력해 주세요: " -r
@@ -44,17 +44,24 @@ echo "연결 중... ${ANDROID_SERIAL}"
 
 adb connect $ANDROID_SERIAL
 adb push magisk-snap.tar /sdcard/magisk-snap.tar
-adb push rp4-boot-magisk-261.img /sdcard/boot.img
+#adb push rp4-boot-magisk-261.img /sdcard/boot.img
+adb push rp4-109-boot-magisk-280.img /sdcard/boot.img
 adb push setup.sh /sdcard/setup.sh
+
+sleep 2
 
 set +e
 adb uninstall com.topjohnwu.magisk
+sleep 2
 set -e
-adb install magisk.apk
-adb install net.micode.fileexplorer_1.apk
+adb install ./apk/magisk.apk
+adb install ./apk/net.micode.fileexplorer_1.apk
 
 echo "장치 설정 중입니다..."
 echo "장치에서 슈퍼유저 권한을 허용해 주세요."
 adb shell su -c "'sh /sdcard/setup.sh'"
+
+echo "Magisk 추가 설청 중입니다. 화면에서 추가 설정을 진행해 주세요"
+adb shell am start -c android.intent.category.LAUNCHER com.topjohnwu.magisk/.ui.MainActivity
 
 echo "탈옥이 완료되었습니다. 좋은 하루 되세요. :)"
